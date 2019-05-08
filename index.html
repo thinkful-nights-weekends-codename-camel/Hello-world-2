@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="This is Sally Student's Resume." />
+    <meta name="description" content="This is {name} Student's Resume." />
     <link rel="stylesheet" href="styles.css" />
-    <title>Sally Student's Resume</title>
+    <title>Student's Resume</title>
   </head>
   <body>
     <div id="application-root"></div>
@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
+      const name = "Sally Student";
       const appRoot = document.querySelector("#application-root");
       function Header() {
         return <header role="banner" />;
@@ -21,7 +22,7 @@
       function Main() {
         return (
           <main role="main">
-            <h2>Sally's Education</h2>
+            <h2>{name}'s Education</h2>
             <ul>
               <li>
                 <a href="http://www.princeton.edu/" target="_blank">
@@ -40,7 +41,7 @@
       function Section() {
         return (
           <section role="region">
-            <h2>Sallys Professional Experience</h2>
+            <h2>{name}'s Professional Experience</h2>
             <h3>Bills Marketing Agency</h3>
             <div>Job Title: Public Relations Specialist</div>
             <div>Dates of Employment</div>
@@ -76,10 +77,10 @@
         return (
           <footer>
             <address>
-              <h2>Sally Student</h2>
+              <h2>{name} Student</h2>
               <span>Email:</span>
               <p>
-                <a href="sallystudent@someplace.com">Sally's Email</a>
+                <a href="{name}student@someplace.com">{name}'s Email</a>
               </p>
               <span>Telephone:</span>
               <p>
@@ -87,7 +88,7 @@
               </p>
               <img
                 src="https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg"
-                alt="Sally Student"
+                alt="{name} Student"
               />
             </address>
           </footer>
@@ -95,7 +96,7 @@
       }
       function App() {
         return (
-          <div>
+          <div className="container">
             <Header />
             <Main />
             <Section />
